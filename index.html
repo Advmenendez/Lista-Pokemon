@@ -9,6 +9,23 @@
     <title>Mi lista Pokemon</title>
   </head>
   <body>
+    <header class= "header">
+      <img class="header__img" src="./logo.png" alt="pokemon_logo">
+  </header>
+  <div>
+    <input id="formulario"
+      type="search"
+      name="buscarpokemon"
+      placeholder="¡Busca un Pokemon!"
+    />
+    <input id= "buttonbuscar" type="submit" value="Buscar" />
+  </div>
+
+  <div class="contenedorBuscados">
+
+  <div class="display__elementBuscado" id= "pokemonBuscado" hidden></div>
+   
+</div>
     <h1 class= "titulo">Lista Pokemon</h1>
     <ul class="pokemon"></ul>
   </body>

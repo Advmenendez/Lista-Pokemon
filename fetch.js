@@ -22,4 +22,36 @@ const printPokemon=pokemons=>{
 }
 
 getPokemons();
-  
+
+document.querySelector("#buttonbuscar").addEventListener ("click", () => {
+    let buscar = document.querySelector("#formulario").value  
+    const searchPokemon = async (buscar) => {
+
+        let buscapokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${buscar}`);
+        let buscador = await buscapokemon.json();
+        
+            
+            
+        
+        
+        imprimirPokemon(buscador)
+
+    
+    }
+    searchPokemon(buscar) 
+
+    const imprimirPokemon = (buscador) => { 
+        const btn = document.querySelector("#pokemonBuscado")
+        btn.hidden = false
+        btn.innerHTML = 
+        `<h2>${buscador.forms[0].name}</h2>
+        <img class="pokemonimage" src="${buscador.sprites.other["official-artwork"]["front_default"]}" alt="${buscador.name}"/>
+       `
+
+        
+
+    }
+
+
+
+}) 
